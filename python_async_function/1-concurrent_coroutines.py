@@ -15,9 +15,5 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     Coroutin which take argument and
     return delay awaiting to launch this function
     """
-    tasks = []
-    for _ in range(n):
-        tasks.append(wait_random(max_delay))
-    results: List[float] = await asyncio.gather(*tasks)
-    results.sort()
-    return results
+    delays = await asyncio.gather(*(wait_random(max_delay) for _ in range(n)))
+    return sorted(delays)
