@@ -4,9 +4,14 @@ Function takes a mapping, any and union of T and any
 to return union of any, T
 """
 from typing import TypeVar, Mapping, Any, Union, Optional
-
 T = TypeVar('T')
-def safely_get_value(dct: Mapping, key: Any, default: Optional[T] = None) -> Union[Any, T]:
+
+
+def safely_get_value(
+        dct: Mapping,
+        key: Any,
+        default: Optional[T] = None
+        ) -> Union[Any, T]:
     """
     Function takes a mapping, any and union of T and any
     to return union of any, T
