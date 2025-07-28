@@ -9,11 +9,11 @@ import asyncio
 import random
 
 
-async def wait_random(max_delay=10):
+async def wait_random(max_delay: int = 10):
     """
     Coroutin which take argument and
     return delay awaiting to launch this function
     """
-    duration = random.uniform(0, max_delay)
+    duration: float = random.uniform(0, max_delay)
     await asyncio.sleep(duration)
     return duration
