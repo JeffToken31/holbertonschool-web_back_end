@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
-Function takes a list, int or float
-to return list
+Function takes a listTuple
 """
-from typing import Union, List, Tuple
+from typing import List, Tuple
 
 
 def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    """
+    Function takes a listTuple
+    """
     zoomed_in: List = [
         item for item in lst
         for i in range(int(factor))
