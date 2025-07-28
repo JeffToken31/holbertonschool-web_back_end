@@ -3,10 +3,10 @@
 Function takes a list, int or float
 to return list
 """
-from typing import Union, List
+from typing import Union, List, Tuple
 
 
-def zoom_array(lst: List, factor: Union[int, float] = 2) -> List:
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
     zoomed_in: List = [
         item for item in lst
         for i in range(int(factor))
