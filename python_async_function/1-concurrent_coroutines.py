@@ -6,6 +6,7 @@ named wait_random that waits for a random delay between 0 and max_delay
 (included and float value) seconds and eventually returns it.
 """
 from typing import List
+import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
@@ -14,8 +15,9 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     Coroutin which take argument and
     return delay awaiting to launch this function
     """
-    results: List = []
+    tasks = []
     for _ in range(n):
-        results.append(await wait_random(max_delay))
+        tasks.append(wait_random(max_delay))
+    results: List[float] = await asyncio.gather(*tasks)
     results.sort()
     return results
