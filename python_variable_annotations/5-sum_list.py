@@ -3,11 +3,16 @@
 Funtion which takes a list input_list of floats
 as argument and returns their sum as a float
 """
+from typing import List
 
 
-def sum_list(input_list: list[float]) -> float:
+def sum_list(input_list: List[float]) -> float:
     """
     Funtion which takes a list input_list of floats
     as argument and returns their sum as a float
     """
-    return sum(input_list)
+    result: float = 0.00
+    number: float
+    for number in input_list:
+        result += number
+    return result
