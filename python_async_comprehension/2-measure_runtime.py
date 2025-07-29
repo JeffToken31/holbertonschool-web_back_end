@@ -13,12 +13,12 @@ async def measure_runtime() -> float:
     Function measuring execution time
     of coroutine and return duration
     """
-    start: float = time.time()
+    start: float = time.monotonic()
     await asyncio.gather(
         async_comprehension(),
         async_comprehension(),
         async_comprehension(),
         async_comprehension()
     )
-    end: float = time.time()
+    end: float = time.monotonic()
     return end - start
