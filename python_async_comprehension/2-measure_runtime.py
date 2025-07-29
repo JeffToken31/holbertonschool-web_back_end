@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Function measuring execution time
+Function measuring runtime
 of coroutine and return duration
 """
 import asyncio
@@ -13,12 +13,12 @@ async def measure_runtime() -> float:
     Function measuring execution time
     of coroutine and return duration
     """
-    start: float = time.perf_counter()
+    start = time.perf_counter()
     await asyncio.gather(
         async_comprehension(),
         async_comprehension(),
         async_comprehension(),
         async_comprehension()
     )
-    end: float = time.perf_counter()
+    end = time.perf_counter()
     return end - start
