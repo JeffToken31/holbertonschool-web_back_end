@@ -14,5 +14,5 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     Not my code impossible to find ressource
     """
-    delays = await asyncio.gather(*(wait_random(max_delay) for _ in range(n)))
+    delays: float = await asyncio.gather(*(wait_random(max_delay) for _ in range(n)))
     return sorted(delays)
