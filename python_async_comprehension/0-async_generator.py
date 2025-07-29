@@ -4,11 +4,11 @@ Asynchronous generator that yields a random float between 0 and 10,
 after waiting 1 second, repeated 10 times.
 """
 import random
-from typing import AsyncGenerator
+from typing import AsyncGenerator, Any
 import asyncio
 
 
-async def async_generator() -> AsyncGenerator[float, None, None]:
+async def async_generator() -> AsyncGenerator[float, Any]:
     """
     Asynchronous generator that yields a random float between 0 and 10,
     after waiting 1 second, repeated 10 times.
