@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Function measuring execution time
-of coroutine and return average of duration
+of coroutine and return duration
 """
 import asyncio
 import time
@@ -11,7 +11,7 @@ async_comprehension = __import__('1-async_comprehension').async_comprehension
 async def measure_runtime() -> float:
     """
     Function measuring execution time
-    of coroutine and return average of duration
+    of coroutine and return duration
     """
     start: float = time.time()
     await asyncio.gather(
@@ -21,5 +21,4 @@ async def measure_runtime() -> float:
         async_comprehension()
     )
     end: float = time.time()
-    duration: float = end - start
-    return duration
+    return end - start
