@@ -12,5 +12,4 @@ def update_topics(mongo_collection, name, topics):
     """
     Update all topics of a school document based on the name
     """
-    for document in mongo_collection.find({},{ "name": name}):
-        document.update_one(topics)
+    return mongo_collection.update_many({"name": name}, {"$set": {"topics": topics}})
