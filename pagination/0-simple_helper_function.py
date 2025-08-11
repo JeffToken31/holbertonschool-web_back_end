@@ -7,6 +7,9 @@ from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """
+    Return a tuple of page asked and size of page
+    """
     start: int = page * page_size - page_size
     still: int = start + page_size
     return (start, still)
