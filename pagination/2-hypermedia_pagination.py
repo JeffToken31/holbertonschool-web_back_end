@@ -55,7 +55,7 @@ class Server:
         data_page = datas[start:end]
         return data_page
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, int]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, object]:
         """
         Function take a set of datas and return all parameters in dict
         """
