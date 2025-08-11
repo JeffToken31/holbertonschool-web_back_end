@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fonction to list all documents in a collection
+Insert datas in collection and return id of thisn
 """
 from pymongo import MongoClient
 
@@ -12,4 +12,4 @@ def insert_school(mongo_collection, **kwargs):
     """
     Insert datas in collection and return id of this
     """
-    return mongo_collection.insert_one(kwargs).inserted_ids
+    return mongo_collection.insert_one(kwargs).inserted_id
