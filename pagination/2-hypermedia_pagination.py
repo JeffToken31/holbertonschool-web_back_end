@@ -55,7 +55,8 @@ class Server:
         data_page = datas[start:end]
         return data_page
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, object]:
+    def get_hyper(
+            self, page: int = 1, page_size: int = 10) -> Dict[str, object]:
         """
         Function take a set of datas and return all parameters in dict
         """
@@ -71,7 +72,7 @@ class Server:
         result['page_size'] = page_size
         result['page'] = page
         result['data'] = data_page
-        if page + 1 < len(datas):
+        if page + 1 < ceil(len(datas) / page_size):
             result['next_page'] = page + 1
         else:
             result['next_page'] = None
