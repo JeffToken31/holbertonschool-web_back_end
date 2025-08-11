@@ -12,4 +12,4 @@ def insert_school(mongo_collection, **kwargs):
     """
     Insert datas in collection and return id of this
     """
-    return mongo_collection.insert(kwargs).inserted_ids
+    return mongo_collection.insert_one(kwargs).inserted_ids
