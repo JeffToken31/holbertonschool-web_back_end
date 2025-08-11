@@ -1,2 +1,2 @@
 // Display numbers of documents
-db.school.countDocuments();
+db.school.count();
