@@ -11,8 +11,6 @@ count_logs = mongo_collection.count_documents({})
 print("{} logs".format(count_logs))
 print("Methods:")
 
-method = ["GET", "POST", "PUT", "PATCH", "DELETE"]
-
 get = mongo_collection.count_documents({"method": "GET"})
 print("\tmethod GET: {}".format(get))
 post = mongo_collection.count_documents({"method": "POST"})
