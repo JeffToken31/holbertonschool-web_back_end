@@ -29,4 +29,4 @@ if __name__ == "__main__":
         {"$limit": 10}
     ])
     for ip in ips:
-        print("{}: {}".format(ip["_id"], ip["count"]))
+        print("\t{}: {}".format(ip["_id"], ip["count"]))
