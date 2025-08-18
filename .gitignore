@@ -215,3 +215,4 @@ __marimo__/
 
 #
 *main*
+*.test.js
