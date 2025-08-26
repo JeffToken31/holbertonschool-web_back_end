@@ -1,9 +1,7 @@
 import { uploadPhoto, createUser } from "./utils.js";
 
 export default function handleProfileSignup() {
-    const photos = uploadPhoto();
-    const user = createUser();
-    Promise.all([photos, user])
+    Promise.all([uploadPhoto(), createUser()])
       .then(([rep1, rep2]) =>
         console.log(`${rep1.body} ${rep2.firstName} ${rep2.lastName}`)
       )
