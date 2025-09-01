@@ -2,7 +2,7 @@ function displayMessage(message) {
     if (typeof message !== "string") {
         throw new Error('Must be a string');
     }
-    console.log(message);
+    process.stdout.write(message + '\n');
 }
 
 module.exports = displayMessage;
