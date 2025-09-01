@@ -8,21 +8,19 @@ function countStudents (path) {
     throw new Error('Cannot load the database');
   }
   const lines = data.split('\n').slice(1).filter(line => line !== '');
-  const sweName = [];
-  const studentName = [];
+  const fields = {};
   const total = lines.length;
 
   for (const line of lines) {
-    const column = line.split(',');
-    if (column[3] === 'SWE') {
-      sweName.push(column[0]);
-    } else {
-      studentName.push(column[0]);
+    const [firstname, , , field] = line.split(',');
+    if (!fields[field]) {
+      fields[field] = [];
     }
+    fields[field].push(firstname);
   }
   console.log(`Number of students: ${total}`);
-  console.log(`Number of students in CS: ${studentName.length}. List: ${studentName.join(', ')}`);
-  console.log(`Number of students in SWE: ${sweName.length}. List: ${sweName.join(', ')}`);
+  for (const field of Object.keys(fields)) {
+    console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+  }
 }
-
 module.exports = countStudents;
