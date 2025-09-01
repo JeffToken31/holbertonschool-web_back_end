@@ -16,7 +16,7 @@ function countStudents (path) {
     const column = line.split(',');
     if (column[3] === 'SWE') {
       sweName.push(column[0]);
-    } else if (column[3] === 'CS') {
+    } else {
       studentName.push(column[0]);
     }
   }
