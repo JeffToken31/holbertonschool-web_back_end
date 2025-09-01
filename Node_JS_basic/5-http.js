@@ -5,18 +5,18 @@ const hostname = '127.0.0.1';
 const port = 1245;
 const app = createServer((req, res) => {
   res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-	if (req.url === ('/students')) {
-		countStudents(process.argv[2])
-      .then((data) => {
-        res.end(`This is the list of our students\n${data}`);
+  res.setHeader('Content-Type', 'text/plain');
+  if (req.url === ('/students')) {
+    countStudents(process.argv[2])
+      .then(() => {
+        res.end('This is the list of our students');
       })
       .catch((error) => {
         res.end(error);
       });
-	} else {
-		res.end('Hello Holberton School!');
-	}
+  } else {
+    res.end('Hello Holberton School!');
+  }
 });
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
