@@ -13,11 +13,11 @@ function countStudents (path) {
   const total = lines.length;
 
   for (const line of lines) {
-    const [firstname, , , field] = line.split(',');
-    if (field === 'SWE') {
-      sweName.push(firstname);
-    } else if (field === 'CS') {
-      studentName.push(firstname);
+    const column = line.split(',');
+    if (column[3] === 'SWE') {
+      sweName.push(column[0]);
+    } else if (column[3] === 'CS') {
+      studentName.push(column[0]);
     }
   }
   console.log(`Number of students: ${total}`);
