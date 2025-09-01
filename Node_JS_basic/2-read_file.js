@@ -21,10 +21,8 @@ function countStudents(path) {
 		}
 	}
 	console.log(`Number of students: ${total}`);
-	console.log(
-    `Number of students in CS: ${studentName.length}. List: ${studentName.join(', ')}`);
-	console.log(
-    `Number of students in CS: ${sweName.length}. List: ${sweName.join(', ')}`);
+	console.log(`Number of students in CS: ${studentName.length}. List: ${studentName.join(', ')}`);
+	console.log(`Number of students in SWE: ${sweName.length}. List: ${sweName.join(', ')}`);
 }
 
 module.exports = countStudents;
