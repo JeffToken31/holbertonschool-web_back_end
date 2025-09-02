@@ -10,7 +10,7 @@ const app = createServer((req, res) => {
         res.end(`This is the list of our students\n${data}`);
       })
       .catch((error) => {
-        res.end(error);
+        res.end(error.message);
       });
   } else {
     res.end('Hello Holberton School!');
