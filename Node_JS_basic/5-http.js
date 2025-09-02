@@ -7,10 +7,10 @@ const app = http.createServer((req, res) => {
 
     countStudents(process.argv[2])
       .then((datas) => {
-        res.end(`This is the list of our students\n${datas.join('\n')}`);
+        res.end(`This is the list of our students\n${datas}`);
       })
       .catch((err) => {
-        res.end(`This is the list of our students\n${err.message}`);
+        res.end(err.message);
       });
   } else {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -18,8 +18,6 @@ const app = http.createServer((req, res) => {
   }
 });
 
-app.listen(1245, 'localhost', () => {
-  console.log('Server running at http://localhost:1245/');
-});
+app.listen(1245);
 
 module.exports = app;
