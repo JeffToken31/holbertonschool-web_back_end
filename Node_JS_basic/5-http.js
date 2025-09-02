@@ -9,7 +9,8 @@ const app = createServer((req, res) => {
   if (req.url === ('/students')) {
     countStudents(process.argv[2])
       .then((data) => {
-        res.end(`This is the list of our students\n${data[0]}\n${data[1]}\n${data[2]}`);
+        res.write('')
+        res.end(`This is the list of our students\n${data.join('\n')}`);
       })
       .catch((error) => {
         res.statusCode = 500;
