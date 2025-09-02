@@ -8,11 +8,13 @@ const app = createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');
   if (req.url === ('/students')) {
     countStudents(process.argv[2])
-      .then(() => {
-        res.end('This is the list of our students');
+      .then((data) => {
+        res.end(
+          `This is the list of our students\n${data[0]}\n${data[1]}\n${data[2]}`);
       })
       .catch((error) => {
-        res.end(error);
+        res.statusCode = 500;
+        res.end(error.message);
       });
   } else {
     res.end('Hello Holberton School!');
