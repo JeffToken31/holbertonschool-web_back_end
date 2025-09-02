@@ -18,7 +18,7 @@ async function countStudents(path) {
         }
         fields[field].push(firstname);
       }
-      let totalStr = []
+      const totalStr = [];
       totalStr.push(`Number of students: ${total}`);
       console.log(totalStr[0]);
       for (const field of Object.keys(fields)) {
